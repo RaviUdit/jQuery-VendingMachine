@@ -22,7 +22,7 @@ function loadProducts(){
 
                 var row = '<td><button type="button" class="btn btn-default">' + itemNumber + '<br>' +
                                                                                  name + '<br> $' + 
-                                                                                 price + '<br>' +
+                                                                                 price.toFixed(2) + '<br>' +
                                                                                  quantity + '</button>';
                 
                 productRows.append(row);
