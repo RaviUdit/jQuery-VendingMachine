@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <title>Vending Machine</title>
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+        <!-- Additional CSS files here -->
+    
+    </head>
+ 
+    <body>
+
+        <div class="container">
+            <h1>Vending Machine</h1>
+            <hr>
+
+            <div class="row">
+                <!-- container for table -->
+                <div class="col-md-8"> 
+                    <h2>Product Table</h2>
+                    <table id="productTable" class="table table-hover">
+                        <tbody id="productRows"></tbody>
+                    </table>
+                </div>
+        
+                <!-- container for forms -->
+                 <div class="col-md-4"> 
+                    <h3>Total $ In</h3>
+                    <!-- Money Input Form -->
+                        <div class="form-group-row">
+                            <input type="number" id="inputMoney" name="inputMoney" readonly><br><br>
+                        </div>
+                        <!-- Money Input Buttons-->
+                        <div class="form-group-row">
+                            <button id="addDollarBtn" class="btn btn-primary" type="button" onclick="addDollar()">
+                                Add Dollar
+                            </button>
+                            <button id="addQuarterBtn" class="btn btn-primary" type="button" onclick="addQuarter()">
+                                Add Quarter
+                            </button>
+                        </div>
+                        <div class="form-group-row">
+                            <button id="addDimeBtn" class="btn btn-primary" type="button" onclick="addDime()">
+                                Add Dime
+                            </button>
+                            <button id="addNickelBtn" class="btn btn-primary" type="button" onclick="addNickel()">
+                                Add Nickel
+                            </button>
+                        </div>
+                    
+                    <hr>
+                    <h3>Messages</h3>
+                    <!-- Messages Form -->
+                    <form id="messagesForm" role="form">
+                        <!-- Messages Box-->
+                        <div class="form-group-row">
+                            <input type = "text" id = "messageReturn" name = "messageReturn" readonly><br><br>
+                        </div>
+
+                        <!-- Item Select -->   
+                        <div class="form-group-row">
+                            <label for="itemDisplay" class="control-label">
+                                Item: 
+                            </label>
+                            <!-- Item Display Box -->    
+                            <input type="text" id="itemDisplay" name="itemDisplay" readonly><br>
+                            
+                        </div>
+
+                        <!-- Make Purchase Button -->
+                        <div class="form-group-row">
+                            <button id="makePurchaseButton" class="btn btn-primary" type="button">
+                                Make Purchase
+                            </button>
+                        </div>
+                    </form>
+
+                    <hr>
+                    <h3>Change</h3> 
+                    <!-- Change Form -->
+                    <form id = "changeForm" role = "form">
+                        <!-- Change Box-->
+                        <div class="form-group-row">
+                        <input type = "text" id = "changeReturn" name = "changeReturn" readonly><br><br>
+                        </div>
+                        <!-- Return Change Button -->
+                        <div class="form-group-row">
+                            <button id="makeChangeButton" class="btn btn-primary" type="button">
+                                Change Return
+                            </button>
+                        </div>
+                    </form>
+                </div> 
+            </div>
+
+
+
+
+        </div>
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!-- use the the full jQuery build, NOT the slim build-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" 
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" 
+            crossorigin="anonymous"></script>
+          
+        <!-- custom js files -->
+        <script src="js/home.js"></script>
+    
+    </body>
+</html>
