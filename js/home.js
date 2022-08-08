@@ -1,7 +1,11 @@
+let testProduct = "test";
+let productId = 0;
+
 $(document).ready(function(){
     //alert("Ready to go!");
+    //hideMakeChangeButton();
     loadProducts();
-    hideMakeChangeButton();
+    
 });
 
 function loadProducts(){
@@ -20,10 +24,10 @@ function loadProducts(){
                 var price = product.price;
                 var quantity = product.quantity;
 
-                var row = '<td><button type="button" class="btn btn-default">' + itemNumber + '<br>' +
-                                                                                 name + '<br> $' + 
-                                                                                 price.toFixed(2) + '<br>' +
-                                                                                 quantity + '</button>';
+                var row = '<td><button type="button" class="btn btn-default" onclick="setProduct(' + id + ')">' + itemNumber + '<br>' +
+                                                                                                                 name + '<br> $' + 
+                                                                                                                 price.toFixed(2) + '<br>' +
+                                                                                                                 quantity + '</button>';
                 
                 productRows.append(row);
                 itemNumber++;
@@ -61,4 +65,11 @@ function addNickel(){
     var money = +$('#inputMoney').val();
     var newMoney = money + 0.05;
     $('#inputMoney').val(newMoney.toFixed(2));
+}
+
+// Setting the item to be vended
+function setProduct(id){
+
+    //productId = 9;
+    $('#messageReturn').val(id);
 }
