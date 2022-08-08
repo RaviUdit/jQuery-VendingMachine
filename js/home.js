@@ -70,6 +70,52 @@ function addNickel(){
 // Setting the item to be vended
 function setProduct(id){
 
-    //productId = 9;
-    $('#messageReturn').val(id);
+    productId = id;
+    $('#itemDisplay').val(id);
+    //$('#messageReturn').val(id);
+}
+
+// Vending Product
+function vendProduct(){
+
+    var prodId = $('#itemDisplay').val();
+    var money = $('#inputMoney').val();
+
+    $.ajax({
+        type: 'POST',
+        url: 'http://vending.us-east-1.elasticbeanstalk.com/money/' + money + '/item/' + prodId,
+        headers: {
+            'Accept':'application/json',
+            'Content-Type':'application/json'
+        },
+        'dataType':'json',
+        success:function(change, changeData){
+            var changeOutput="";
+
+            var quarters = change.quarters;
+            var dimes = change.dimes;
+            var nickels = change.nickels;
+            var pennies = change.pennies;
+
+            if(quarters > 0){
+                changeOutput += "Quarters: " + quarters;
+            }
+            if(dimes > 0){
+                changeOutput += "Dimes: " + dimes;
+            }
+            if(nickels > 0){
+                changeOutput += "Nickels: " + nickels;
+            }
+            if(pennies > 0){
+                changeOutput += "Pennies: " + pennies;
+            }
+
+            $('#messageReturn').val("Thank You!!!");
+            $('#changeReturn').val(changeOutput);
+        },
+        error:function(response, responseStatus){
+            var message = response.responseJSON.message;
+            $('#messageReturn').val(message);
+        }
+    })
 }
