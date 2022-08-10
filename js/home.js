@@ -5,6 +5,7 @@ $(document).ready(function(){
     //alert("Ready to go!");
     //hideMakeChangeButton();
     loadProducts();
+    initMoney();
     
 });
 
@@ -41,6 +42,10 @@ function hideMakeChangeButton(){
     $('#makeChangeButton').hide();
 }
 
+// Setting Total $ In to 0.00
+function initMoney(){
+    $('#inputMoney').val('0.00');
+}
 
 // Adding Money to the Vending Machine
 function addDollar(){
@@ -118,4 +123,44 @@ function vendProduct(){
             $('#messageReturn').val(message);
         }
     })
+}
+
+// Making change from the money inputted into #inputMoney
+function makeChange(){
+
+    var changeOutput="";
+    var money = Number($('#inputMoney').val());
+
+    var quarterValue = Math.floor(money/0.25);
+    money = money - (quarterValue * 0.25)
+    money = money.toFixed(2);
+
+    var dimeValue = Math.floor(money/0.10);
+    money = money - (dimeValue * 0.10)
+    money = money.toFixed(2);
+
+    var nickelValue = Math.floor(money/0.05);
+    money = money - (nickelValue * 0.05)
+    money = money.toFixed(2);
+
+    var pennyValue = Math.floor(money/0.01);
+    // money = money - (pennyValue * 0.01)
+    // money = money.toFixed(2);
+
+    if(quarterValue > 0){
+        changeOutput +=  quarterValue + "Quarters ";
+    }
+    if(dimeValue > 0){
+        changeOutput +=  dimeValue + "Dimes ";
+    }
+    if(nickelValue > 0){
+        changeOutput +=  nickelValue + "Nickels ";
+    }
+    if(pennyValue > 0){
+        changeOutput +=  pennyValue + "Pennies";
+    }
+     
+    $('#changeReturn').val(changeOutput);
+
+    initMoney();
 }
