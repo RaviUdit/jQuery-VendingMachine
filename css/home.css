@@ -2,6 +2,7 @@ button.btn-default {
     border: 2px outset black;
     border-radius: 0;
     background-color: #996633;
+    margin: 10px;
 }
 
 button.btn-primary{
@@ -15,6 +16,10 @@ button.btn-primary{
 }
 
 h3{
+    text-align: center;
+}
+
+input{
     text-align: center;
 }
 

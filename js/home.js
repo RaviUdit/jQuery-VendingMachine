@@ -12,7 +12,7 @@ $(document).ready(function(){
 function loadProducts(){
 
     var itemNumber = 1;
-    var productRows = $('#productRows');
+    var productRows = $('#prodRows');
 
     var row="";
     var rowCounter = 1;
@@ -28,21 +28,21 @@ function loadProducts(){
                 var price = product.price;
                 var quantity = product.quantity;
 
-                if(rowCounter == 1){
-                    row += '<tr>';
-                }
+                // if(rowCounter == 1){
+                //     row += '<tr>';
+                // }
 
-                row += '<td><button type="button" class="btn btn-default" onclick="setProduct(' + id + ')">' + itemNumber + '<br>' +
+                row += '<div class="col-sm-4"><button type="button" class="btn btn-default w-100" onclick="setProduct(' + id + ')">' + itemNumber + '<br>' +
                                                                                                                  name + '<br> $' + 
                                                                                                                  price.toFixed(2) + '<br>' +
-                                                                                                                 quantity + '</button></td>';
+                                                                                                                 quantity + '</button></div>';
 
                 
                 
 
-                if(rowCounter == 3){
-                    row += '</tr>'
-                }
+                // if(rowCounter == 3){
+                //     row += '</tr>'
+                // }
                 
                 productRows.append(row);
                 row = "";
