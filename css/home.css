@@ -1,0 +1,13 @@
+button.btn-default {
+    border: 2px outset black;
+    border-radius: 0;
+    background-color: #996633;
+}
+
+/* h1{
+    background-color: aqua;
+} */
+
+.tableWrap{
+    display:inline-block;
+}

@@ -14,6 +14,9 @@ function loadProducts(){
     var itemNumber = 1;
     var productRows = $('#productRows');
 
+    var row="";
+    var rowCounter = 1;
+
     $.ajax({
 
         type: 'GET',
@@ -25,13 +28,30 @@ function loadProducts(){
                 var price = product.price;
                 var quantity = product.quantity;
 
-                var row = '<td><button type="button" class="btn btn-default" onclick="setProduct(' + id + ')">' + itemNumber + '<br>' +
+                if(rowCounter == 1){
+                    row += '<tr>';
+                }
+
+                row += '<td><button type="button" class="btn btn-default" onclick="setProduct(' + id + ')">' + itemNumber + '<br>' +
                                                                                                                  name + '<br> $' + 
                                                                                                                  price.toFixed(2) + '<br>' +
-                                                                                                                 quantity + '</button>';
+                                                                                                                 quantity + '</button></td>';
+
+                
+                
+
+                if(rowCounter == 3){
+                    row += '</tr>'
+                }
                 
                 productRows.append(row);
+                row = "";
                 itemNumber++;
+                rowCounter++;
+
+                if(rowCounter > 3){
+                    rowCounter = 1;
+                }
             })
 
         }
