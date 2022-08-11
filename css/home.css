@@ -15,6 +15,11 @@ button.btn-primary{
     box-shadow: 5px 5px;
 }
 
+span.itemNum{
+    text-align: left !important;
+    /* color:red; */
+}
+
 h1{
     text-align: center;
 }
@@ -23,7 +28,7 @@ h3{
     text-align: center;
 }
 
-input{
+#inputMoney{
     text-align: center;
 }
 
