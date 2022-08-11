@@ -37,7 +37,7 @@ function loadProducts(){
 
                 row += '<div class="col-sm-4"><button type="button" class="btn btn-default w-100" onclick="setProduct(' + id + ')"><span class="itemNum" id="itemNum">' + itemNumber + '</span><br>' +
                                                                                                                  name + '<br> $' + 
-                                                                                                                 price.toFixed(2) + '<br> Quantity Left: ' +
+                                                                                                                 price.toFixed(2) + '<br><br> Quantity Left: ' +
                                                                                                                  quantity + '</button></div>';
 
                 
@@ -73,8 +73,6 @@ function hideMakeChangeButton(){
 function showMakeChangeButton(){    
     $('#makeChangeButton').show();
 }
-
-// SHowing the Change Button.
 
 // Setting Total $ In to 0.00
 function initMoney(){
