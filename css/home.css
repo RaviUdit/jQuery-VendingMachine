@@ -3,6 +3,7 @@ button.btn-default {
     border-radius: 0;
     background-color: #996633;
     margin: 10px;
+    margin-top: 0px;
 }
 
 button.btn-primary{
@@ -15,7 +16,19 @@ button.btn-primary{
     box-shadow: 5px 5px;
 }
 
+button.button1 {
+    text-align: left;
+    background-color: #996633;
+    margin-left: 10px;
+    border-bottom: 0px;
+}
+
+button.button2 {
+    border-top: 0px;
+}
+
 span.itemNum{
+    /* padding: 0 5px 5px 5px; */
     text-align: left !important;
     /* color:red; */
 }
@@ -27,6 +40,7 @@ h1{
 h3{
     text-align: center;
 }
+
 
 #inputMoney{
     text-align: center;

@@ -34,8 +34,10 @@ function loadProducts(){
                 // if(rowCounter == 1){
                 //     row += '<tr>';
                 // }
+                
 
-                row += '<div class="col-sm-4"><button type="button" class="btn btn-default w-100" onclick="setProduct(' + id + ')"><span class="itemNum" id="itemNum">' + itemNumber + '</span><br>' +
+                row += '<div class="col-sm-4"><button class="button button1 w-100" onclick="setProduct(' + id + ')">' + itemNumber +'</button>' + 
+                       '<button type="button" class="btn btn-default button2 w-100" onclick="setProduct(' + id + ')"><br>' +
                                                                                                                  name + '<br> $' + 
                                                                                                                  price.toFixed(2) + '<br><br> Quantity Left: ' +
                                                                                                                  quantity + '</button></div>';
