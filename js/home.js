@@ -11,6 +11,9 @@ $(document).ready(function(){
 
 function loadProducts(){
 
+    //clearing previously loaded products.
+    clearProducts();
+
     var itemNumber = 1;
     var productRows = $('#prodRows');
 
@@ -58,9 +61,20 @@ function loadProducts(){
     })
 }
 
+// Clearing the Products. 
+function clearProducts(){
+    $('#prodRows').empty();
+}
+
+// Hiding the Change Button.
 function hideMakeChangeButton(){    
     $('#makeChangeButton').hide();
 }
+function showMakeChangeButton(){    
+    $('#makeChangeButton').show();
+}
+
+// SHowing the Change Button.
 
 // Setting Total $ In to 0.00
 function initMoney(){
@@ -72,6 +86,8 @@ function addDollar(){
     var money = Number($('#inputMoney').val());
     var newMoney = money + 1.00;
     $('#inputMoney').val(newMoney.toFixed(2));
+
+    showMakeChangeButton();
 }
 
 function addQuarter(){
@@ -123,26 +139,40 @@ function vendProduct(){
             var pennies = change.pennies;
 
             if(quarters > 0){
-                changeOutput += "Quarters: " + quarters;
+                changeOutput += quarters + " Quarters ";
             }
             if(dimes > 0){
-                changeOutput += "Dimes: " + dimes;
+                changeOutput += dimes + " Dimes ";
             }
             if(nickels > 0){
-                changeOutput += "Nickels: " + nickels;
+                changeOutput += nickels +  " Nickels ";
             }
             if(pennies > 0){
-                changeOutput += "Pennies: " + pennies;
+                changeOutput += pennies + " Pennies ";
             }
 
             $('#messageReturn').val("Thank You!!!");
             $('#changeReturn').val(changeOutput);
+
+            //Reseting the Money Input.
+            initMoney();
+
+            //Resetting Products.
+            clearProducts();
+            loadProducts();
+
+            hideMakeChangeButton();
         },
         error:function(response, responseStatus){
             var message = response.responseJSON.message;
             $('#messageReturn').val(message);
+
+            hideMakeChangeButton();
         }
     })
+
+    //Resetting Products. 
+    loadProducts();
 }
 
 // Making change from the money inputted into #inputMoney
@@ -168,16 +198,16 @@ function makeChange(){
     // money = money.toFixed(2);
 
     if(quarterValue > 0){
-        changeOutput +=  quarterValue + "Quarters ";
+        changeOutput +=  quarterValue + " Quarters ";
     }
     if(dimeValue > 0){
-        changeOutput +=  dimeValue + "Dimes ";
+        changeOutput +=  dimeValue + " Dimes ";
     }
     if(nickelValue > 0){
-        changeOutput +=  nickelValue + "Nickels ";
+        changeOutput +=  nickelValue + " Nickels ";
     }
     if(pennyValue > 0){
-        changeOutput +=  pennyValue + "Pennies";
+        changeOutput +=  pennyValue + " Pennies";
     }
      
     $('#changeReturn').val(changeOutput);
