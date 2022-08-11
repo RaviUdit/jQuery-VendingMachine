@@ -66,7 +66,7 @@ function clearProducts(){
     $('#prodRows').empty();
 }
 
-// Hiding the Change Button.
+// Hiding and Showing the Make Change Button.
 function hideMakeChangeButton(){    
     $('#makeChangeButton').hide();
 }
@@ -94,18 +94,24 @@ function addQuarter(){
     var money = Number($('#inputMoney').val());
     var newMoney = money + 0.25;
     $('#inputMoney').val(newMoney.toFixed(2));
+
+    showMakeChangeButton();
 }
 
 function addDime(){
     var money = Number($('#inputMoney').val());
     var newMoney = money + 0.10;
     $('#inputMoney').val(newMoney.toFixed(2));
+
+    showMakeChangeButton();
 }
 
 function addNickel(){
     var money = +$('#inputMoney').val();
     var newMoney = money + 0.05;
     $('#inputMoney').val(newMoney.toFixed(2));
+
+    showMakeChangeButton();
 }
 
 // Setting the item to be vended
@@ -160,6 +166,7 @@ function vendProduct(){
             //Resetting Products.
             clearProducts();
             loadProducts();
+            $('#itemDisplay').val('');
 
             hideMakeChangeButton();
         },
@@ -168,6 +175,7 @@ function vendProduct(){
             $('#messageReturn').val(message);
 
             hideMakeChangeButton();
+            $('#itemDisplay').val('');
         }
     })
 
