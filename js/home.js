@@ -37,7 +37,7 @@ function loadProducts(){
 
                 row += '<div class="col-sm-4"><button type="button" class="btn btn-default w-100" onclick="setProduct(' + id + ')">' + itemNumber + '<br>' +
                                                                                                                  name + '<br> $' + 
-                                                                                                                 price.toFixed(2) + '<br>' +
+                                                                                                                 price.toFixed(2) + '<br> Quantity Left: ' +
                                                                                                                  quantity + '</button></div>';
 
                 
